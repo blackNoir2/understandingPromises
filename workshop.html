@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn Fetch & Promises</title>
+  </head>
+  <body>
+    <h1>Open the console</h1>
+    <script>
+
+        // Challenge 1 - shows the result of the fetch result
+        const url = "https://pokeapi.co/api/v2/pokemon/pikachu"
+        fetch(url).then((result) => {
+          // console.log(result);
+        })
+
+        // challenge 2 - Returns the data in JSON 
+        fetch(url)
+             .then((result) => result.json())
+             .then((data) => {
+               console.log(data)
+             })
+          
+        // challenge 3 - Log the body 
+        fetch(url)
+           .then((response) => response.json())
+           .then((pikachu) => console.log(pikachu))
+
+        
+        // challenge 4 Broken url - handling errors 
+        fetch("broken-url")
+             .then((response) => response.json())
+             .then((pikachu) => console.log(pikachu))
+             .catch((error) => console.log(error))
+
+    </script>
+  </body>
+</html>
